@@ -1,30 +1,49 @@
-# React + TypeScript + Vite
+# Компонент ColoredUserpic
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Этот репозиторий содержит React компонент `ColoredUserpic`, который рендерит круглое изображение с градиентной обводкой, меняющей цвет при наведении. Компонент принимает несколько пропсов для настройки внешнего вида.
 
-Currently, two official plugins are available:
+## Установка
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+Чтобы использовать этот компонент в своем React приложении, следуйте этим шагам:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Склонируйте этот репозиторий или скачайте исходный код.
+2. Установите необходимые зависимости, выполнив `npm install` в директории проекта.
 
-- Configure the top-level `parserOptions` property like this:
+## Использование
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+Импортируйте компонент `ColoredUserpic` в ваш React компонент:
+
+```jsx
+import ColoredUserpic from './ColoredUserpic';
+```
+Затем вы можете использовать компонент в вашем JSX коде:
+
+```jsx
+<ColoredUserpic
+	src='./avatar.png'
+	size={150}
+	margin={4}
+	backgroundColor='red'
+	colors={['green', 'blue']}
+	hoverColors={['blue', 'green']}
+	colorWidth={6}
+/>
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+**Пропсы**
+
+Компонент `ColoredUserpic` принимает следующие пропсы:
+
+*   `src` (строка, обязательный): Путь к изображению, которое нужно отобразить.
+*   `size` (число, опционально): Размер изображения в пикселях. По умолчанию `150`.
+*   `margin` (число, опционально): Отступ между изображением и градиентной обводкой в пикселях. По умолчанию `4`.
+*   `backgroundColor` (строка, опционально): Цвет фона компонента. По умолчанию `'red'`.
+*   `colors` (массив строк, опционально): Массив цветов для градиентной обводки. По умолчанию `['green', 'blue']`.
+*   `hoverColors` (массив строк, опционально): Массив цветов для градиентной обводки при наведении. По умолчанию `['blue', 'green']`.
+*   `colorWidth` (число, опционально): Ширина градиентной обводки в пикселях. По умолчанию `6`.
+
+**Лицензия**
+
+Этот проект распространяется под лицензией [MIT License](LICENSE).
+
